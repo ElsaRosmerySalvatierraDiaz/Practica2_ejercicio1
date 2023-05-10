@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de productos</h1>
+        <form>
+          <div class="form-group">
+            <label for="nombre">Nombre del producto:</label>
+            <input type="text" class="form-control" id="nombre">
+          </div>
+          <div class="form-group">
+            <label for="descripcion">Descripción del producto:</label>
+            <input type="text" class="form-control" id="descripcion">
+          </div>
+          <div class="form-group">
+            <label for="precio">Precio del producto:</label>
+            <input type="number" class="form-control" id="precio">
+          </div>
+          <div class="form-group">
+            <label for="cantidad">Cantidad del producto:</label>
+            <input type="number" class="form-control" id="cantidad">
+          </div>
+          <button type="button" class="btn btn-primary" id="agregar">Agregar producto</button>
+        </form>
+        <hr>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID del producto</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Fecha de registro</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-productos">
+          </tbody>
+        </table>
+    </div>
+      
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="productos.js"></script>
+
+    <script>
+        $("#btn-actualizar").hide()
+
+        // Instanciar
+        const model = new TareaModelo();
+        const view = new TareasView();
+        const controller = new TareaController(model, view);
+        controller.loadFechaHoy();
+
+    </script>
+
+</body>
+</html>
